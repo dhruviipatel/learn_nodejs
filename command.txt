@@ -1,0 +1,66 @@
+npm init
+npm start
+npm i <packagename>
+npm uninstall <packagename>
+
+
+//mongodb
+brew services start mongodb-community@7.0
+brew services stop mongodb-community@7.0
+
+mongosh
+show dbs
+use<db_name>
+db.coll.find()
+db.coll.insert()
+
+db.inventory.find({}) - fetch all doc 
+db.inventory.find({qty:25}) - you can also specify special argument type data you want to fetch
+db.inventory.find({}).limit(5) - return only 5 document
+db.inventory.find({}).skip(5) - skip first 5 document
+db.inventory.find({}).sort({qty:1}) - sort qty wise from ascending order if qty:-1 then descendiong order
+
+
+//in 
+db.inventory.find({ status: { $in: ["A","D"]}})
+
+//And
+db.inventory.find({status:"A",qty:{ $lt:30}})
+
+//or
+db.inventory.find({ $or: [ {status:"A"}, {qty: {$lt:30}}]})
+
+//delete doc
+db.inventory.deleteOne({status: "D"})
+db.inventory.deleteMany({status:"D"})
+db.inventory.deleteMany({})
+
+
+//server
+	mongodb://127.0.0.1:27017/
+
+
+
+//mogodb connectivity with node js app
+npm i mongoose
+create connection
+schema
+create model
+use model to peerform operation
+
+
+
+//server side rendering 
+-EJS -Embedded javascript Templating
+-pug js
+-haddlebars
+
+
+
+
+// if (!category) {
+        //     return res.status(404).json({ error: "User not found" })
+        // } else {
+        //     return res.json({ message: "Category retrive successfully", category: category })
+        // }
+
